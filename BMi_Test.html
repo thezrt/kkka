@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="output.css">
+  <title>BMI</title>
+  <!---->
+</head>
+
+<body class="w-full h-screen  bg-cover" style="background-image: url(https://media3.giphy.com/media/NQ3SGAMneQ920/giphy.gif?cid=ecf05e477r982yz81u1t89lwdlav7w1mp1ryt15q459iq8u8&ep=v1_gifs_search&rid=giphy.gif&ct=g); ">
+  <h1  dir="rtl" class="font-bold text-4xl text-center m-5">موقع لحساب الوزن بطريقة <a href="https://en.wikipedia.org/wiki/Body_mass_index" 
+    class="text-lime-500 animate-pulse underline hover:text-5xl hover:text-white transition-all ease-in-out   ">BMI</a> </h1>
+<h1 class=" font-bold text-5xl text-cyan-400 text-center m-10">حساب الوزن</h1>
+<hr class=" m-5 border-4 rounded-lg ">
+
+<div class=" mx-6 p-5 rounded-xl border-8 ">
+  <div>
+    <h2 class="font-bold text-center p-5  ">الوزن</h2>
+    <div class="flex justify-center   " >
+      <input type="text" id="weight-input" class=" border-4 border-slate-800 hover:animate-pulse transition-all ease-in-out shadow-2xl rounded-lg">
+      </div>
+  </div>
+   <!--الوزن-->
+  <div>
+<h2 class="font-bold text-center py-2  ">الطول</h2>
+<div class="flex justify-center  m-5 " >
+
+  <input type="text" id="height-input" class=" border-4 border-slate-800 hover:animate-pulse transition-all ease-in-out shadow-2xl rounded-lg">
+  </div>
+
+   <!--الطول-->
+  </div>
+   <div class="flex justify-center">
+    <button type="button" class=" rounded-lg shadow-2xl p-1  outline-dotted  hover:scale-125 transition ease-in-out" id="button1">أحسب</button>
+    <!--button-->
+  </div>
+   
+  <img >
+    <h3 id="BMI" class="font-bold text-center m-5"></h3>
+    <h3 id="mbi-category" class="font-bold text-center m-5"></h3>
+     
+  </div>
+   
+</div> 
+
+
+
+
+
+
+
+
+
+
+<!--javascript-->
+<script>
+
+
+document.getElementById("button1").addEventListener("click", function() {
+ let weight = document.getElementById("weight-input" ).value
+
+ let height = document.getElementById("height-input").value
+ let BMI = weight/(height*height)
+
+ document.getElementById("BMI").innerHTML = BMI
+ 
+ switch(true){
+    case(BMI <= 18): document.getElementById("mbi-category").innerHTML ="( كثر اكل)نحيف"
+   break
+    case(BMI >18 && BMI <=24.9): document.getElementById("mbi-category").innerHTML ="(صح عليك)مثالي" 
+    break
+    case(BMI >25 && BMI <=29.9): document.getElementById("mbi-category").innerHTML ="(خفف الاكل)زون زائد"
+    break
+    case(BMI >30 && BMI <=34.9): document.getElementById("mbi-category").innerHTML ="(الطريق للسكري)دبه فرش"
+    break
+    case(BMI >35 && BMI <=39.9): document.getElementById("mbi-category").innerHTML ="(الطريق الى الموت)دبه متطور"
+break
+    case(BMI >= 40            ):document.getElementById("mbi-category").innerHTML ="(ميت)دبه لفل ماكس"
+    break
+    
+    
+
+
+  }
+})
+
+
+
+
+
+
+
+
+
+  
+ 
+  
+  
+
+</script>
+
+</body>
+</html>
